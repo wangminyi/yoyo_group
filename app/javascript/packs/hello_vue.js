@@ -8,6 +8,13 @@
 import Vue from 'vue'
 import App from '../app.vue'
 
+// 微信 js 注册
+var wx_ready = false;
+wx.config(gon.js_config_params);
+wx.ready(function() {
+  wx_ready = true;
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(document.createElement('hello'))
   const app = new Vue(App).$mount('hello')

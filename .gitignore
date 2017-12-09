@@ -22,3 +22,7 @@
 /public/packs
 /public/packs-test
 /node_modules
+
+config/application.yml
+config/database.yml
+/public/assets
