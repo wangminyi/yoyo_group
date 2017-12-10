@@ -37,7 +37,7 @@ class Wx
       {
         debug: true,
         appId: ENV["wx_id"],
-        noncestr: noncestr,
+        nonceStr: noncestr,
         timestamp: timestamp,
         signature: self.js_signature(noncestr, timestamp, url),
         jsApiList: ["chooseWXPay", "closeWindow", "chooseImage", "previewImage"]
@@ -48,14 +48,14 @@ class Wx
       # 按 key 字典序排列
       sign_str = {
         jsapi_ticket: self.jsapi_ticket,
-        noncestr: noncestr,
+        nonceStr: noncestr,
         timestamp: timestamp,
         url: url
       }.map do |key, value|
         "#{key}=#{value}"
       end.join("&")
-
       require 'digest/sha1'
+
       Digest::SHA1.hexdigest sign_str
     end
   end
