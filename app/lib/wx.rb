@@ -35,11 +35,12 @@ class Wx
       noncestr = "ij4o23jovdfv0d0fjsd"
       timestamp = Time.now.to_i
       {
+        debug: true,
         appId: ENV["wx_id"],
         noncestr: noncestr,
         timestamp: timestamp,
         signature: self.js_signature(noncestr, timestamp, url),
-        jsApiList: ["chooseWXPay", "closeWindow"]
+        jsApiList: ["chooseWXPay", "closeWindow", "chooseImage", "previewImage"]
       }
     end
 
