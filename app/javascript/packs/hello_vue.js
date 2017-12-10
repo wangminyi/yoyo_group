@@ -13,6 +13,10 @@ var wx_ready = false;
 wx.config(gon.js_config_params);
 wx.ready(function() {
   wx_ready = true;
+  alert('success')
+});
+wx.error(function() {
+  alert('error')
 });
 
 document.addEventListener('DOMContentLoaded', () => {
